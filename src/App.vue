@@ -24,14 +24,14 @@ export default {
     }
             },
               async created() {
-                let course = await fetch("http://joshuacw3-env.eba-i9ghq3bb.eu-west-2.elasticbeanstalk.com/collection/lesson")
+                let course = await fetch("http://coursework3-env.eba-sfj7d2kb.eu-west-2.elasticbeanstalk.com/collection/lesson_")
                 let result = await course.json()
                 this.lessons = result
                 console.log(result)
             },
             methods: {
                 filteredList(){
-                    fetch(`http://joshuacw3-env.eba-i9ghq3bb.eu-west-2.elasticbeanstalk.com/collection/lesson/search?key_word=${this.search}`)
+                    fetch(`http://coursework3-env.eba-sfj7d2kb.eu-west-2.elasticbeanstalk.com/collection/lesson_/search?key_word=${this.search}`)
                     .then(response => {
                         return response.json()
                     })
@@ -60,7 +60,7 @@ export default {
                         cartProduct: this.cart,
                     }
                     let order_details = (JSON.stringify(orders))
-                    fetch('http://joshuacw3-env.eba-i9ghq3bb.eu-west-2.elasticbeanstalk.com/collection/order', {
+                    fetch('http://coursework3-env.eba-sfj7d2kb.eu-west-2.elasticbeanstalk.com/collection/order', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json; charset=UTF-8',
